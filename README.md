@@ -1,3 +1,8 @@
+Para você que precisa realizar alguma clusterização com algoritimo não supervisionado, ou seja, conjuntos de dados não rotulados, você precisará saber qual a melhor forma de clusterizar.
+Não sabemos se o melhor número de cluster é 1, 2 ou 50. Dessa forma, o método Elbow te ajudará a definir essa quantidade de cluster. 
+
+O melhor número de cluster é o anterior de quando a linha começa a ficar linear.
+
 ## Instalando os pacotes necessários para a análise
 install.packages("ggplot2")
 install.packages("dplyr")
@@ -19,10 +24,10 @@ library(factoextra)
 library(gridExtra)
 
 ## Lendo os dados do arquivo Excel
-dados <- read_excel("C:\\Users\\bruna.gomes\\Desktop\\BI\\Base Teste Sazo.xlsx")
+dados <- read_excel("LOCAL DO ARQUIVO")
 
 ## Exibindo as linhas dos dados em formato tabular
-kable(head(dados, 5000), col.names = c("Customer CNPJ", "jan_21", "fev_21", "mar_21", "abr_21", "mai_21", "jun_21", "jul_21", "ago_21", "set_21", "out_21", "nov_21", "dez_21", "jan_22", "fev_22", "mar_22", "abr_22", "mai_22", "jun_22", "jul_22", "ago_22", "set_22", "out_22", "nov_22", "dez_22", "jan_23", "fev_23", "mar_23", "abr_23", "mai_23", "jun_23", "jul_23", "ago_23", "set_23", "out_23", "nov_23", "dez_23")) %>% kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+kable(head(dados, 5000), col.names = c("COLUNA 1", "COLUNA 2", "COLUNA 3", ....)) %>% kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 
 ## Selecionando apenas as variáveis quantitativas
 dados.quanti <- dados[, -1]
